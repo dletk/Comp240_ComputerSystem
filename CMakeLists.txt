@@ -3,6 +3,6 @@ project(PersonalProject)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES Comp240/HW2/double_denorn_zero.c)
+set(SOURCE_FILES Comp240/HW2/safe_math.c)
 #Update the name of the file you want to build after the SOURCE_FILES above
 add_executable(PersonalProject ${SOURCE_FILES})
