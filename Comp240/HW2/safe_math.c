@@ -90,6 +90,7 @@ double safe_hypo(double x, double y) {
 int main() {
     printf("%f\n", safe_atanh(sqrt(2)/2));
     printf("%f\n", atanh(sqrt(2)/2));
+    printf("%f\n", safe_atanh(NAN));
     printf("%f\n", safe_pow(10, -4000));
     printf("%f\n", safe_hypo(1.6e308,1.7e308));
     return 0;
