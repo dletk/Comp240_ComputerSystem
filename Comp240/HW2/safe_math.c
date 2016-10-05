@@ -65,7 +65,7 @@ double safe_pow(double x, double y) {
     result = pow(x,y);
 
     if ((math_errhandling & MATH_ERRNO) && errno != 0) {
-        printf("The result is out of range to expressed, return HUGE_VAL\n");
+        fprintf(stderr,"Range error occurred, reported by MATH_ERRNO: %d\n",errno);
 //        return HUGE_VAL;
     } else if ((math_errhandling & MATH_ERREXCEPT) && fetestexcept(FE_OVERFLOW | FE_UNDERFLOW) !=0) {
         fprintf(stderr, "Range error occurred by OVERFLOW\n");
@@ -89,12 +89,18 @@ double safe_hypo(double x, double y) {
     double result = hypot(x,y);
 
     if ((math_errhandling & MATH_ERRNO) && errno != 0) {
-        printf("The result is out of range to expressed, return HUGE_VAL\n");
-        return HUGE_VAL;
-    } else if ((math_errhandling & MATH_ERREXCEPT) && fetestexcept(FE_OVERFLOW | FE_UNDERFLOW | FE_INVALID) != 0) {
-        printf("The result is out of range to expressed, return HUGE_VAL\n");
-        return HUGE_VAL;
+        fprintf(stderr,"Range error occurred, reported by MATH_ERRNO: %d\n",errno);
+
+    } else if ((math_errhandling & MATH_ERREXCEPT) && fetestexcept(FE_OVERFLOW | FE_UNDERFLOW) != 0) {
+        fprintf(stderr, "Range error occurred by OVERFLOW\n");
+
+    } else if ((math_errhandling & MATH_ERREXCEPT) && fetestexcept(FE_INVALID) != 0) {
+        fprintf(stderr,"Input is INVALID \n");
+//        return HUGE_VAL;
+    } else if isnan(result) {
+        fprintf(stderr, "Input is NAN\n");
     }
+
 
     return result;
 }
@@ -160,11 +166,20 @@ int main() {
 //    printf("%f\n", safe_pow(+INFINITY, +INFINITY));
 
 //    printf("%f\n", safe_pow(-121321321,123123123));
-
+//    printf("%f\n", safe_pow(10, -5000));
+    printf("-------------------------------\n");
+    printf("%f\n", safe_hypo(+INFINITY,NAN));
+    printf("%f\n", safe_hypo(+INFINITY,123));
+    printf("%f\n", safe_hypo(+INFINITY,-123));
+    printf("%f\n", safe_hypo(-INFINITY,NAN));
+    printf("%f\n", safe_hypo(-INFINITY,123));
+    printf("%f\n", safe_hypo(-INFINITY,-123));
+    printf("%f\n", safe_hypo(NAN,NAN));
+    printf("%f\n", safe_hypo(1,NAN));
 
 //    printf("%f\n", atanh(1));
 //    printf("%f\n", safe_atanh(NAN));
-//    printf("%f\n", safe_pow(10, -5000));
+
 //    printf("%f\n", safe_hypo(1.6e308,1.7e308));
     return 0;
 }
