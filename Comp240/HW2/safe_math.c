@@ -47,7 +47,8 @@ double safe_atanh(double arg) {
 double safe_pow(double x, double y) {
     double result;
     if (x<0 && (floor(y) != y || ceil(y) != y)) {
-        fprintf(stderr,"Input is not in domain, return NaN\n");
+//    if (isnan(x) && ) {
+        fprintf(stderr,"Domain error occurred\n");
 //        return NAN;
     }
     if ((x == 0) && (y < 0)) { // Handle for pole error
@@ -110,44 +111,55 @@ int main() {
 //    printf("%f\n", safe_atanh(-0.0));
 
 //    printf("---------------------------------\n");
-    printf("%f\n", safe_pow(3,4));
-    printf("%f\n", safe_pow(0.0,-7));
-    printf("%f\n", safe_pow(-0.0,-9));
-    printf("%f\n", safe_pow(0.0,-4));
-    printf("%f\n", safe_pow(-0.0,-4));
-    printf("%f\n", safe_pow(0.0,-4.4));
-    printf("%f\n", safe_pow(-0.0,-4.4));
-    printf("%f\n", safe_pow(0.0,-INFINITY));
-    printf("%f\n", safe_pow(-0.0,-INFINITY));
-    printf("%f\n", safe_pow(0,9));
-    printf("%f\n", safe_pow(-0.0,9));
-    printf("%f\n", safe_pow(0.0,4));
-    printf("%f\n", safe_pow(-0.0,4));
-    printf("%f\n", safe_pow(0.0,4.1));
-    printf("%f\n", safe_pow(-0.0,4.1));
-    printf("%f\n", safe_pow(-1,+INFINITY));
-    printf("%f\n", safe_pow(-1,-INFINITY));
-    printf("%f\n", safe_pow(1,9));
-    printf("%f\n", safe_pow(1,-9));
-    printf("%f\n", safe_pow(1,9.1));
-    printf("%f\n", safe_pow(1,-9.1));
-    printf("%f\n", safe_pow(1,NAN));
-    printf("%f\n", safe_pow(5,0.0));
-    printf("%f\n", safe_pow(-5,-0.0));
-    printf("%f\n", safe_pow(5.1,0.0));
-    printf("%f\n", safe_pow(-5.1,-0.0));
-    printf("%f\n", safe_pow(NAN,0.0));
-    printf("%f\n", safe_pow(-NAN,-0.0));
-    printf("%f\n", safe_pow(-5,2.7));
-    printf("%f\n", safe_pow(0.5,-INFINITY));
-    printf("%f\n", safe_pow(5,-INFINITY));
-    printf("%f\n", safe_pow(0.5,+INFINITY));
-    printf("%f\n", safe_pow(5,-INFINITY));
 //    printf("%f\n", safe_pow(3,4));
-//    printf("%f\n", safe_pow(3,4));
-//    printf("%f\n", safe_pow(3,4));
-//    printf("%f\n", safe_pow(3,4));
-//    printf("%f\n", safe_pow(3,4));
+//    printf("%f\n", safe_pow(0.0,-7));
+//    printf("%f\n", safe_pow(-0.0,-9));
+//    printf("%f\n", safe_pow(0.0,-4));
+//    printf("%f\n", safe_pow(-0.0,-4));
+//    printf("%f\n", safe_pow(0.0,-4.4));
+//    printf("%f\n", safe_pow(-0.0,-4.4));
+//    printf("%f\n", safe_pow(0.0,-INFINITY));
+//    printf("%f\n", safe_pow(-0.0,-INFINITY));
+//    printf("%f\n", safe_pow(0,9));
+//    printf("%f\n", safe_pow(-0.0,9));
+//    printf("%f\n", safe_pow(0.0,4));
+//    printf("%f\n", safe_pow(-0.0,4));
+//    printf("%f\n", safe_pow(0.0,4.1));
+//    printf("%f\n", safe_pow(-0.0,4.1));
+//    printf("%f\n", safe_pow(-1,+INFINITY));
+//    printf("%f\n", safe_pow(-1,-INFINITY));
+//    printf("%f\n", safe_pow(1,9));
+//    printf("%f\n", safe_pow(1,-9));
+//    printf("%f\n", safe_pow(1,9.1));
+//    printf("%f\n", safe_pow(1,-9.1));
+//    printf("%f\n", safe_pow(1,NAN));
+//    printf("%f\n", safe_pow(5,0.0));
+//    printf("%f\n", safe_pow(-5,-0.0));
+//    printf("%f\n", safe_pow(5.1,0.0));
+//    printf("%f\n", safe_pow(-5.1,-0.0));
+//    printf("%f\n", safe_pow(NAN,0.0));
+//    printf("%f\n", safe_pow(NAN,-0.0));
+//    printf("%f\n", safe_pow(-5,2.7)); // Check this for domain error
+//    printf("%f\n", safe_pow(0.5,-INFINITY));
+//    printf("%f\n", safe_pow(5,-INFINITY));
+//    printf("%f\n", safe_pow(0.5,+INFINITY));
+//    printf("%f\n", safe_pow(5,+INFINITY));
+//    printf("%f\n", safe_pow(-INFINITY,-5));
+//    printf("%f\n", safe_pow(-INFINITY,-4));
+//    printf("%f\n", safe_pow(-INFINITY,-5.1));
+//    printf("%f\n", safe_pow(-INFINITY,5));
+//    printf("%f\n", safe_pow(-INFINITY,4));
+//    printf("%f\n", safe_pow(-INFINITY,5.1));
+//    printf("%f\n", safe_pow(+INFINITY,-10));
+//    printf("%f\n", safe_pow(+INFINITY,-11));
+//    printf("%f\n", safe_pow(+INFINITY,-10.1));
+//    printf("%f\n", safe_pow(+INFINITY, -INFINITY));
+//    printf("%f\n", safe_pow(+INFINITY, 9));
+//    printf("%f\n", safe_pow(+INFINITY, 9.1));
+//    printf("%f\n", safe_pow(+INFINITY, 10));
+//    printf("%f\n", safe_pow(+INFINITY, +INFINITY));
+
+//    printf("%f\n", safe_pow(-121321321,123123123));
 
 
 //    printf("%f\n", atanh(1));
