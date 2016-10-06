@@ -46,8 +46,8 @@
       <file leaf-file-name="safe_math.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Comp240/HW2/safe_math.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-548">
-              <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="120" column="39" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
               <folding>
                 <element signature="e#39#56#0" expanded="true" />
               </folding>
@@ -435,7 +435,7 @@
       <workItem from="1475615567654" duration="1483000" />
       <workItem from="1475642451387" duration="5339000" />
       <workItem from="1475649391392" duration="200000" />
-      <workItem from="1475682531647" duration="3468000" />
+      <workItem from="1475682531647" duration="6424000" />
     </task>
     <task id="LOCAL-00001" summary="Commit for HW2">
       <created>1475114468887</created>
@@ -455,7 +455,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37872000" />
+    <option name="totallyTimeSpent" value="40828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -856,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Comp240/HW2/safe_math.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-548">
-          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        <state relative-caret-position="270">
+          <caret line="120" column="39" selection-start-line="120" selection-start-column="39" selection-end-line="120" selection-end-column="39" />
           <folding>
             <element signature="e#39#56#0" expanded="true" />
           </folding>
