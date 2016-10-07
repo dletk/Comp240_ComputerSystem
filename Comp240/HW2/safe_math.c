@@ -94,18 +94,18 @@ double safe_hypo(double x, double y) {
 
 
 int main() {
-    // Testing for safe_atanh
-//    assert(safe_atanh(0.2) == atanh(0.2));
-//    assert(isnan(safe_atanh(1.55)));
-//    assert(isnan(safe_atanh(DBL_MAX)));
-//    assert(safe_atanh(1) == atanh(1));
-//    assert(safe_atanh(-1) == atanh(-1));
-//    assert(isnan(safe_atanh(INFINITY)));
-//    assert(isnan(safe_atanh(1.1)));
-//    assert(isnan(safe_atanh(NAN)));
-//    assert(safe_atanh(0.0) == atanh(0.0));
-//    assert(safe_atanh(-0.0) == atanh(-0.0));
-
+//     Testing for safe_atanh
+    assert(safe_atanh(0.2) == atanh(0.2));
+    assert(isnan(safe_atanh(1.55)));
+    assert(isnan(safe_atanh(DBL_MAX)));
+    assert(safe_atanh(1) == atanh(1));
+    assert(safe_atanh(-1) == atanh(-1));
+    assert(isnan(safe_atanh(INFINITY)));
+    assert(isnan(safe_atanh(1.1)));
+    assert(isnan(safe_atanh(NAN)));
+    assert(safe_atanh(0.0) == atanh(0.0));
+    assert(safe_atanh(-0.0) == atanh(-0.0));
+//     Testing for safe_pow
     assert(safe_pow(3,4) == pow(3,4));
     assert(safe_pow(0.0,0.0) == pow(0.0,0.0));
     assert(safe_pow(0.0,-7) == pow(0.0,-7));
@@ -154,23 +154,18 @@ int main() {
     assert(safe_pow(+INFINITY, 9.1) == pow(+INFINITY, 9.1));
     assert(safe_pow(+INFINITY, 10) == pow(+INFINITY,10));
     assert(safe_pow(+INFINITY, +INFINITY) == pow(+INFINITY,+INFINITY));
-
     assert(safe_pow(-121321321,123123123) == pow(-121321321,123123123));
     assert(safe_pow(10, -5000) == pow(10,-5000));
+//     Testing for safe_hypo
+    assert(safe_hypo(+INFINITY,NAN) == hypot(+INFINITY,NAN));
+    assert(safe_hypo(+INFINITY,123) == hypot(+INFINITY,123));
+    assert(safe_hypo(+INFINITY,-123) == hypot(+INFINITY,-123));
+    assert(safe_hypo(-INFINITY,NAN) == hypot(-INFINITY,NAN));
+    assert(safe_hypo(-INFINITY,123) == hypot(-INFINITY,123));
+    assert(safe_hypo(-INFINITY,-123) == hypot(-INFINITY,-123));
+    assert(isnan(safe_hypo(NAN,NAN)));
+    assert(isnan(safe_hypo(1,NAN)));
+    assert(safe_hypo(DBL_MAX,DBL_MAX) == hypot(DBL_MAX,DBL_MAX));
 
-//    printf("%f\n", safe_hypo(+INFINITY,NAN));
-//    printf("%f\n", safe_hypo(+INFINITY,123));
-//    printf("%f\n", safe_hypo(+INFINITY,-123));
-//    printf("%f\n", safe_hypo(-INFINITY,NAN));
-//    printf("%f\n", safe_hypo(-INFINITY,123));
-//    printf("%f\n", safe_hypo(-INFINITY,-123));
-//    printf("%f\n", safe_hypo(NAN,NAN));
-//    printf("%f\n", safe_hypo(1,NAN));
-//    printf("%f\n", safe_hypo(DBL_MAX,DBL_MAX));
-
-//    printf("%f\n", atanh(1));
-//    printf("%f\n", safe_atanh(NAN));
-
-//    printf("%f\n", safe_hypo(1.6e308,1.7e308));
     return 0;
 }
